@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>AJAX2</title>
+    <script>
+        function ajaxloadhtml(){
+            $("#some_html").load("../static/some2.html", function(responseTxt, statusTxt, xhr){
+                debugger;
+            });
+        }
+
+        function ajaxgetjson(){
+            $.get("../static/some.json", function(responseTxt, statusTxt, xhr){
+                debugger;
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="some_html">
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci saepe, minima accusamus asperiores obcaecati nulla eos! Et quibusdam modi tempore eum, numquam in, nisi soluta laborum tenetur amet excepturi! Voluptate?</h2>
+    </div>
+    <button onclick="ajaxloadhtml()">AJAX Load</button>
+    <button onclick="ajaxgetjson()">AJAX get</button>
+</body>
+</html>

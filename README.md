@@ -1,2 +1,1 @@
-# abeyrathna-np
-MSCGIS - GIS 1250
+GIS 1250 FUNDAMENTALS OF WEB GIS student repo

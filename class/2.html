@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+    <script>
+
+        // var answer = myFunction(5, 10);
+        // console.log("answer " + answer)
+
+        function myFunction(p1, p2) {
+            answer = p1 * p2;
+
+            if(answer <= 10){
+                console.log("good....")
+            }
+            else{
+                console.log("bad....")
+            }
+
+            console.log("answer " + answer)
+        }
+
+        function myforloop(){
+            var cars = ["Car 01", "Car 02", "Car 03"] 
+            for (let i = 0; i < cars.length; i++) {
+                debugger;
+                alert(cars[i]);
+            }
+
+        }
+
+
+        // function function_name()
+        // {
+        //     // alert("My first statement ……");
+        //     /*
+        //     adds two numbers
+        //     alert the answer
+        //     */
+        //     debugger;
+        //     var x=5;
+        //     var y=5;
+        //     var z;
+        //     z= x+y;
+        //     // alert(z);
+        //     // console.log("answer" + z)
+
+
+        //     let layer = {display_name: "Provinces", layer:"sl_provinces", lengend_url:"dfdfas"}
+        //     let layer_array = [
+        //     {display_name: "Provinces", layer:"sl_provinces", lengend_url:"dfdfas"},
+        //     {display_name: "Provinces", layer:"sl_provinces", lengend_url:"dfdfas"},
+        //     {display_name: "Provinces", layer:"sl_provinces", lengend_url:"dfdfas"},
+        //     ]
+        //     debugger;
+        //     alert(layer_array)
+        // }
+
+        
+
+
+    </script>
+</head>
+<body>
+    <div><h2>JS</h2></div>
+    <button onclick="myFunction(5,10)">Click Here</button>
+    <button onclick="myforloop()">for loop</button>
+    
+</body>
+</html>

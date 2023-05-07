@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>AJAX</title>
+    <script>
+        $( document ).ready(function() {
+            $("#some_html").load("../static/some.html", function(responseTxt, statusTxt, xhr){
+                debugger;
+                if(statusTxt == "success")
+                    alert("External content loaded successfully!");
+                if(statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+            });
+        });
+        $.get("../static/some.json", function(data, statusTxt, xhr){
+                if(statusTxt == "success")
+                debugger;
+                    alert("External content loaded successfully!");
+                    alert(data.batters.batter[0].type)
+                if(statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+            });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="some_html">
+        </div>
+        <div id="some_json">
+
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+            load_layers();
+        });
+
+        function load_map(obj)
+        {
+            $("#img_map").attr("src", obj.attributes["source"].value);
+        }
+
+        function load_layers(){
+            let layers = [
+                {display_name:"Cities", source:"../img/Sri_Lankan_Provinces_and_districts.PNG"},
+                {display_name:"GN Divisions", source:"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dotted-lines-and-Mahaweli-System.png"},
+                {display_name:"Districts", source:"../img/Sri_Lankan_Provinces_and_districts.PNG"},
+                {display_name:"Provinces", source:"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dotted-lines-and-Mahaweli-System.png"}
+            ]
+            layer_list =  $("#layer_list")
+            for (i=0; i<layers.length; i++){
+                layer_list.append('<li onclick="load_map(this)" source="'+layers[i].source+'">' + layers[i].display_name + '</li>');
+            }
+        }
+    </script>
+    <title>JS 2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul id="layer_list">
+
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <img id="img_map" src="" alt="">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

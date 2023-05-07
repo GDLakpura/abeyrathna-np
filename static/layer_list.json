@@ -1,0 +1,8 @@
+{
+    "layers":[
+        {"display_name":"Districts", "img_url":"../img/Sri_Lankan_Provinces_and_districts.PNG"},
+        {"display_name":"Provinces", "img_url":"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dotted-lines-and-Mahaweli-System.PNG"},
+        {"display_name":"Rivers", "img_url":"../img/Sri_Lankan_Provinces_and_districts.PNG"},
+        {"display_name":"Roads", "img_url":"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dotted-lines-and-Mahaweli-System.PNG"},
+    ]
+}
