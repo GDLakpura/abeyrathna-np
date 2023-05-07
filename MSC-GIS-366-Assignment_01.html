@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en"> <head>    
+<meta charset="UTF-8">  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+ <title>intratctive static map</title>    
+     <script>        
+      // let layer_list = [       
+      //     {display_name:"Districts", img_url:"../img/Sri_Lankan_Provinces_and_districts.PNG"},         //     {display_name:"Provinces", img_url:"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dottedlines-and-Mahaweli-System.PNG"},         //     {display_name:"Rivers", img_url:"../img/Sri_Lankan_Provinces_and_districts.PNG"},         //     {display_name:"Roads", img_url:"../img/Map-of-Sri-Lanka-showing-the-District-boundaries-dottedlines-and-Mahaweli-System.PNG"},         // ]         $(document).ready(function() {             load_layer_list();         }); 
+      function load_map_img(obj)       
+        {image_url = $(obj).attr("image_url")             
+      $("#map_img").attr("src", image_url)         
+    } 
+ function load_layer_list()         
+    {            
+     $.get("layer_list.json", function(responseTxt, statusTxt, xhr){            
+             console.log(responseTxt)                
+     let layer_list=responseTxt['layers'] 
+
+    for (i=0; i < layer_list.length; i++)             
+    {              
+        layer = layer_list[i];                
+        li = "<li onclick='load_map_img(this)' image_url='"+ layer.img_url+"'>" + layer.display_name +"</li>" 
+
+         $("#layer_list").append(li);             
+        } 
+        })                      
+    } 
+
+</script> 
+</head> 
+<body>     
+    <div class="container-fluid">        
+     <div class="row">             
+        <div class="col-sm-3" id="left_panel">        
+        <ul id="layer_list"> 
+        </ul>             
+    </div>           
+    <div class="col-sm-9" id ="right_panel">          
+    <img id="map_img" src="../img/Sri_Lankan_Provinces_and_districts.PNG" alt="">       
+    </div>        
+    </div>    
+    </div>    
+    </body> 
+    </html> 
